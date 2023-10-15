@@ -1,8 +1,9 @@
 <template>
-  <div>
-  <div>{{ name }}</div>
-  <div v-text="lastname"></div>
-  <div v-text="email"></div>
+  <div v-bind:id="customerId">
+    <div>{{ name }}</div>
+    <div v-text="lastname"></div>
+    <div v-text="email"></div>
+    <button v-bind:disabled="isDisable">select</button>
   </div>
 </template>
 
@@ -13,9 +14,11 @@ export default {
   name: 'App',
   data(){
     return {
+      customerId:'1',
       name:'Yusuf',
       lastname:'ELIK',
       email: 'ysfelik1@gmail.com',
+      isDisable:false,
     }
   }
   
