@@ -12,13 +12,19 @@
     <div v-text="customer.email"></div>
     <button v-bind:disabled="customer.isDisable">select</button>
   </div>
+  <FormComponent/>
 </template>
 
 
 <script>
+ import FormComponent from './components/form.vue';
 
 export default {
+
   name: 'App',
+  components:{
+    FormComponent
+  },
   data(){
     return {
       customersList: [{
