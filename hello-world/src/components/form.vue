@@ -17,6 +17,10 @@
       <label for="email">Email</label>
       <input type="email" id="email" v-model="formValues.email">
     </div>
+    <div>
+      <label for="isDisable">Is disabled</label>
+      <input type="checkbox" id="isDisable" v-model="formValues.isDisable">
+    </div>
   </form>
 </template>
    
@@ -30,6 +34,7 @@ export default {
         name: '',
         lastname: '',
         email: '',
+        isDisable:false,
       }
     }
   },
