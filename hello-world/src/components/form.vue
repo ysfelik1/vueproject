@@ -4,7 +4,7 @@
       {{ JSON.stringify(formValues, null, 2) }}
     </pre>
   </div>
-  <form>
+  <form @submit="submitForm">
     <div>
       <label for="name">Name</label>
       <input type="text" id="name" v-model="formValues.name">
@@ -21,6 +21,7 @@
       <label for="isDisable">Is disabled</label>
       <input type="checkbox" id="isDisable" v-model="formValues.isDisable">
     </div>
+    <div><button>submit</button></div>
   </form>
 </template>
    
@@ -34,12 +35,15 @@ export default {
         name: '',
         lastname: '',
         email: '',
-        isDisable:false,
+        isDisable: false,
       }
     }
   },
   methods: {
-
+    submitForm(event) {
+      event.preventDefault()
+      console.log('form values', this.formValues)
+    }
   },
 }
 
@@ -47,8 +51,7 @@ export default {
 </script>
    
 <style scoped>
-input,
-label {
+div{
   padding: 5px;
   margin: 5px;
 
