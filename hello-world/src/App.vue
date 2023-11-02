@@ -10,10 +10,14 @@
     <div>{{ customer.name }}</div>
     <div v-text="customer.lastname"></div>
     <div v-text="customer.email"></div>
-    <button v-bind:disabled="customer.isDisable">select</button>
+    <button v-bind:disabled="customer.isDisable">select</button>\
+    <button v-on:click="selectCustomer(customer.customerId)">select</button>
+
   </div>
   <FormComponent />
-  <DetailsComponent />
+    <!--<DetailsComponent customerId={{ this.selectedId}}/> -->
+  <DetailsComponent :customerId="selectedId"/>
+
 </template>
 
 
@@ -29,6 +33,7 @@ export default {
   },
   data() {
     return {
+      selectedId: null,
       customersList: [{
         customerId: '1',
         name: 'Yusuf',
@@ -66,7 +71,13 @@ export default {
       }
       ]
     }
-  }
+  },
+  methods: {
+    selectCustomer(customerId) {
+      this.selectedId=customerId;
+      console.log( this.selectedId);
+    }
+  },
 
 }
 </script>
