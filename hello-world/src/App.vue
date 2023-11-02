@@ -13,17 +13,19 @@
     <button v-bind:disabled="customer.isDisable">select</button>
   </div>
   <FormComponent />
+  <DetailsComponent />
 </template>
 
 
 <script>
 import FormComponent from './components/form.vue';
-
+import DetailsComponent from './components/DetailsComponent.vue'
 export default {
 
   name: 'App',
   components: {
-    FormComponent
+    FormComponent,
+    DetailsComponent,
   },
   data() {
     return {
